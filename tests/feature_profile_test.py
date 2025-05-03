@@ -20,7 +20,7 @@ class TestProfileFeature(BaseTest):  # Определяем класс для т
         self.dashboard_page.click_my_info_link()  # Кликаем по ссылке "My Info"
         self.personal_page.is_opened()  # Проверяем, что страница личного профиля открыта
         self.personal_page.change_name(f"Test {random.randint(1, 5)}")  # Меняем имя профиля на случайное значение
-        self.personal_page.save_changes().sleep(15)  # Сохраняем изменения
+        self.personal_page.save_changes()  # Сохраняем изменения
         self.personal_page.is_changes_saved()  # Проверяем, были ли изменения успешно сохранены
 
 
