@@ -9,6 +9,7 @@ def driver(request):  # Определяем функцию фикстуры, к
     options.add_argument("--no-sandbox")    # Опция, отключающая изоляцию (sandbox) для улучшения совместимости с CI/CD
     options.add_argument("--disable-dev-shm-usage")  # Опция, разрешающая использование общей памяти для контейнеров (например, Docker)
     options.add_argument("--window-size=1920x1080")  # Устанавливаем размер окна браузера
+    options.add_argument("--start-maximized")  # Добавляем аргумент для открытия окна браузера на полный экран
     driver = webdriver.Chrome(options=options)  # Создаем экземпляр драйвера Chrome с заданными параметрами
     request.cls.driver = driver  # Сохраняем экземпляр драйвера в классе теста, чтобы он был доступен в тестах
     yield driver  # Возвращаем экземпляр драйвера для использования в тестах
